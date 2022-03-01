@@ -18,3 +18,29 @@ Não permite acentuação
 Apenas letras minúsculas
 Não permite acentuação     
 */
+
+//Fazer a criptografia: Criar a função 
+//Ligar a função ao botão correspondente no HTML 
+//Desenvolver a lógica da criptografia
+
+var textoDigitado = document.querySelector("#input-texto");
+console.log(textoDigitado);
+var textoCriptografado = "";
+textoDigitado.focus();
+
+
+function criptografar(){
+
+    var textoCriptografado = textoDigitado.value.replace(/a/g, "ai").replace(/e/g, "enter")
+    .replace(/i/g, "imes").replace(/o/g, "ober").replace(/u/g, "ufat");
+    var criptografiaPronta = document.querySelector("#msg");
+    criptografiaPronta.value = textoCriptografado;
+    textoDigitado.value = "";
+    return textoCriptografado;
+    
+};
+
+var botaoCriptografar = document.querySelector("#btn-cripto");
+botaoCriptografar.onclick = criptografar;
+
+console.log(textoCriptografado);
