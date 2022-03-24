@@ -19,28 +19,47 @@ Apenas letras minúsculas
 Não permite acentuação     
 */
 
-//Fazer a criptografia: Criar a função 
-//Ligar a função ao botão correspondente no HTML 
-//Desenvolver a lógica da criptografia
 
-var textoDigitado = document.querySelector("#input-texto");
-console.log(textoDigitado);
-var textoCriptografado = "";
-textoDigitado.focus();
+const btncripto = document.querySelector("#btn-cripto");
+const btndescripto = document.querySelector("#btn-descripto");
 
 
-function criptografar(){
 
-    var textoCriptografado = textoDigitado.value.replace(/a/g, "ai").replace(/e/g, "enter")
-    .replace(/i/g, "imes").replace(/o/g, "ober").replace(/u/g, "ufat");
-    var criptografiaPronta = document.querySelector("#msg");
-    criptografiaPronta.value = textoCriptografado;
-    textoDigitado.value = "";
-    return textoCriptografado;
-    
-};
+function entrada_palavra() {
+    const palavra = (document.querySelector("#input-texto")).value;
 
-var botaoCriptografar = document.querySelector("#btn-cripto");
-botaoCriptografar.onclick = criptografar;
+    return palavra;
+}
 
-console.log(textoCriptografado);
+function codificar() {
+
+    var cripto = entrada_palavra();
+    cripto = cripto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+
+    document.getElementById("msg").value = cripto;
+
+
+}
+
+
+function descodificar() {
+    var descripto = entrada_palavra();
+    descripto = descripto.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
+
+    document.getElementById("msg").value = descripto;
+
+}
+
+
+
+btncripto.addEventListener('click', codificar);
+btndescripto.addEventListener('click', descodificar);
+
+//Copiar
+
+document.getElementById("btn-copy").addEventListener('click', function () {
+    document.getElementById("msg").select();
+    /*document.execCommand("copy");*/
+    navigator.clipboard.writeText(msg.value);
+    msg.value = ""
+});

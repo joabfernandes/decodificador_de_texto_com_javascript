@@ -8,31 +8,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 class="titulo">CÓDIGO SECRETO</h1>
+  <h1 class="titulo">Código Secreto</h1>
 
   <main class="main">
     <section class="form box">
       <form action="">
-        <label for="input-texto">Apenas letras minúsculas, sem acento</label>
+        <h3 id="">Apenas letras minúsculas, sem acento:</h3>
+        <!--<label for="input-texto">Apenas letras minúsculas, sem acento.</label> -->
         <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="insira o texto aqui">
-        <input class="btn" type="submit" value="criptografar!" id="btn-cripto">
-        <input class="btn" type="submit" value="descriptografar!" id="btn-descripto">
+        <input class="btn" type="button" value="criptografar!" id="btn-cripto">
+        <input class="btn" type="button" value="descriptografar!" id="btn-descripto">
       </form>
+
     </section>
-  
+
     <section class="msg box">
-      <h2 id="">Mensagem criptografada:</h2>
+      <h3 id="">Mensagem criptografada ou descriptografada:</h3>
       <input class="text-input" type="text" id="msg"></input>
       <input class="btn" type="submit" value="copiar" id="btn-copy">
     </section>
   </main>
-  <footer>
 
-    Projeto ORACLE + alura
-    <br> Desenvolvedor: Joab Fernandes 
-    <br>
-    
-  </footer>
+<footer class="rodape">
+    <p>Projeto ORACLE + alura | Desenvolvedor: Joab Fernandes</p>
+</footer>
 
   <script src="script.js"></script>
 </body>
