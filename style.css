@@ -64,3 +64,18 @@ body {
   left: 10px;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+
+  .box, h3 {
+      width: auto;
+      padding: auto;
+      margin: 0 auto 0 auto;
+  }
+
+ .rodape{
+   width: auto;
+   position: relative;
+   margin: 2em 3em 0 1em;
+ }
+}
